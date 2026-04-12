@@ -1,0 +1,89 @@
+.btn {
+  font-family: var(--font-body);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  gap: 0.5rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  padding: 1rem 2.5rem;
+  border-radius: var(--rounded-sm);
+  font-size: 1.125rem;
+  color: var(--on-primary-fixed, #100069);
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+}
+
+.cta-gradient:not(:disabled):hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 15px rgba(108, 99, 255, 0.2);
+}
+
+.cta-gradient:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background: transparent;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: var(--rounded-sm);
+  font-size: 1.125rem;
+}
+
+.btn-secondary:not(:disabled):hover {
+  background: rgba(196, 192, 255, 0.1);
+}
+
+.btn-tertiary {
+  background: transparent;
+  padding: 0.5rem 1rem;
+  color: var(--on-surface-variant);
+}
+
+.btn-tertiary:not(:disabled):hover {
+  color: var(--on-surface);
+}
+
+.btn-outline {
+  background: var(--surface-container-high);
+  color: var(--on-surface);
+  padding: 1rem 2.5rem;
+  border-radius: var(--rounded-sm);
+  font-size: 1.125rem;
+}
+
+.btn-outline:not(:disabled):hover {
+  background: var(--surface-bright);
+}
+
+.btn-danger {
+  background: var(--error-container);
+  color: var(--on-error-container);
+  padding: 1rem 2.5rem;
+  border-radius: var(--rounded-sm);
+  font-size: 1.125rem;
+  box-shadow: 0 0 15px rgba(255, 180, 171, 0.1);
+}
+
+.btn-danger:not(:disabled):hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 15px rgba(255, 180, 171, 0.3);
+}
+
+.btn-danger:not(:disabled):active {
+  transform: scale(0.98);
+}

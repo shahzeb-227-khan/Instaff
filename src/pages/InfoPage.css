@@ -1,0 +1,383 @@
+/* ══════════════════════════════════════════
+   InfoPage.css — shared by About & Help pages
+   ══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+.info-root {
+  min-height: 100vh;
+  background: #f0eded;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  color: #1b1c1c;
+}
+
+/* ── Header ── */
+.info-header {
+  background: rgba(252, 249, 248, 0.94);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(195, 198, 211, 0.35);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.info-logo {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003f8b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.03em;
+}
+
+.info-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.info-header-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #434751;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.info-header-link:hover { color: #003f8b; background: rgba(0, 63, 139, 0.06); }
+
+.info-header-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #003f8b 0%, #2557a7 100%);
+  border: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.info-header-btn:hover { filter: brightness(1.1); }
+
+/* ── Main ── */
+.info-main {
+  flex: 1;
+  max-width: 840px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* ── Hero ── */
+.info-hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-hero__tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #003f8b;
+  background: rgba(0, 63, 139, 0.09);
+  padding: 5px 14px;
+  border-radius: 999px;
+}
+
+.info-hero__title {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #1b1c1c;
+  margin: 0;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.info-hero__sub {
+  font-size: 1.05rem;
+  color: #434751;
+  line-height: 1.75;
+  max-width: 620px;
+  margin: 0;
+}
+
+/* ── CTA button ── */
+.info-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #003f8b 0%, #2557a7 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.75rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 63, 139, 0.25);
+}
+
+.info-cta-btn:hover { filter: brightness(1.08); box-shadow: 0 6px 24px rgba(0, 63, 139, 0.35); }
+
+.info-cta-btn--outline {
+  background: none;
+  color: #003f8b;
+  border: 1.5px solid rgba(0, 63, 139, 0.3);
+  box-shadow: none;
+}
+
+.info-cta-btn--outline:hover { background: rgba(0, 63, 139, 0.05); filter: none; box-shadow: none; }
+
+/* ── Sections ── */
+.info-section {}
+
+.info-section__title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1b1c1c;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.info-section__body {
+  font-size: 0.95rem;
+  color: #434751;
+  line-height: 1.8;
+  margin: 0 0 0.875rem;
+}
+
+/* Cards */
+.info-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.info-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 20px rgba(27, 28, 28, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.info-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-card__icon--blue  { background: rgba(0, 63, 139, 0.10); color: #003f8b; }
+.info-card__icon--green { background: rgba(53, 106, 53, 0.10); color: #356a35; }
+
+.info-card__title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1b1c1c;
+  margin: 0;
+}
+
+.info-card__body {
+  font-size: 0.875rem;
+  color: #434751;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Values */
+.info-values {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.info-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 14px;
+  box-shadow: 0 1px 10px rgba(27, 28, 28, 0.05);
+}
+
+.info-value__icon { color: #003f8b; flex-shrink: 0; margin-top: 2px; }
+.info-value__label { font-size: 0.9rem; font-weight: 700; color: #1b1c1c; margin-bottom: 3px; }
+.info-value__body  { font-size: 0.85rem; color: #434751; line-height: 1.55; }
+
+/* ── CTA section ── */
+.info-cta-section {
+  background: linear-gradient(135deg, #003f8b 0%, #2557a7 100%);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.info-cta-section__title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.info-cta-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.info-cta-section .info-cta-btn {
+  background: #ffffff;
+  color: #003f8b;
+  box-shadow: none;
+}
+
+.info-cta-section .info-cta-btn:hover { background: #f0eded; filter: none; }
+
+.info-cta-section .info-cta-btn--outline {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.info-cta-section .info-cta-btn--outline:hover { background: rgba(255, 255, 255, 0.22); }
+
+/* ── Help-specific ── */
+.help-steps {
+  padding-left: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  font-size: 0.85rem;
+  color: #434751;
+  line-height: 1.6;
+}
+
+.help-nav-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.help-nav-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  background: #ffffff;
+  padding: 1.125rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 10px rgba(27, 28, 28, 0.04);
+}
+
+.help-nav-item__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 63, 139, 0.08);
+  color: #003f8b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.help-nav-item__title { font-size: 0.9rem; font-weight: 700; color: #1b1c1c; margin-bottom: 3px; }
+.help-nav-item__body  { font-size: 0.82rem; color: #434751; line-height: 1.55; }
+
+/* FAQ */
+.help-faq { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.help-faq__item {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 10px rgba(27, 28, 28, 0.04);
+}
+
+.help-faq__q {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1b1c1c;
+  text-align: left;
+  transition: background 0.15s;
+  gap: 1rem;
+}
+
+.help-faq__q:hover { background: #fafafa; }
+.help-faq__item--open .help-faq__q { color: #003f8b; }
+
+.help-faq__a {
+  padding: 0 1.25rem 1rem;
+  font-size: 0.875rem;
+  color: #434751;
+  line-height: 1.7;
+}
+
+/* ── Footer ── */
+.info-footer {
+  background: #1b1c1c;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.info-footer__logo { font-family: 'Noto Serif', serif; font-size: 1.1rem; font-weight: 700; color: #ffffff; }
+.info-footer__copy { font-size: 0.78rem; color: rgba(255, 255, 255, 0.4); font-family: 'Inter', sans-serif; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .info-cards { grid-template-columns: 1fr; }
+  .info-main  { padding: 2rem 1.25rem 4rem; }
+}

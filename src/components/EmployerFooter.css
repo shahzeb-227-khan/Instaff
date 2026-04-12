@@ -1,0 +1,53 @@
+/* ══════════════════════════════════════════
+   SHARED FOOTER — EmployerFooter.css
+   Used by both portals.
+   ══════════════════════════════════════════ */
+
+.emp-footer {
+  background: #1b1c1c;
+  border-top: 1px solid rgba(195, 198, 211, 0.12);
+  padding: 1.75rem 0;
+  margin-top: auto;
+}
+
+.emp-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.emp-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emp-footer__logo {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.emp-footer__tagline {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-family: 'Inter', sans-serif;
+}
+
+.emp-footer__note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.38);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .emp-footer__inner { flex-direction: column; align-items: flex-start; }
+}

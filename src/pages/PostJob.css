@@ -1,0 +1,257 @@
+.post-job-page {
+  min-height: 100vh;
+}
+
+.main-canvas {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.flex-layout {
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .flex-layout {
+    flex-direction: row;
+  }
+}
+
+.flex-1 { flex: 1; }
+.w-80 { width: 100%; max-width: 320px; }
+
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.back-btn:hover { color: var(--primary); }
+.icon-mr { margin-right: 0.5rem; }
+
+.vertical-divider {
+  height: 1rem;
+  width: 1px;
+  background-color: var(--outline-variant);
+  opacity: 0.2;
+}
+
+.breadcrumbs {
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+}
+
+.mx-2 { margin: 0 0.5rem; }
+.page-header { margin-bottom: 3rem; }
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .grid-2-col { grid-template-columns: repeat(2, 1fr); }
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .grid-3-col { grid-template-columns: repeat(3, 1fr); }
+}
+
+.col-span-2 { grid-column: span 1; }
+@media (min-width: 768px) {
+  .col-span-2 { grid-column: span 2; }
+}
+
+.form-section { margin-bottom: 2rem; }
+.gap-y-lg { margin-bottom: 3rem; }
+.gap-y-sm { margin-bottom: 1rem; }
+
+.bg-surface-low { background-color: var(--surface-container-low); }
+.p-lg { padding: 2rem; }
+.border-outline { border: 1px solid rgba(70, 69, 85, 0.1); } /* outline-variant/10 */
+
+.relative-container { position: relative; }
+.pl-12 { padding-left: 3rem; }
+.absolute-icon { position: absolute; top: 1rem; }
+.left-icon { left: 1rem; }
+
+/* Skills Input */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--rounded-sm);
+  border-bottom: 1px solid rgba(70, 69, 85, 0.2);
+  transition: all 0.2s;
+}
+
+.skills-container:focus-within {
+  border-bottom-color: var(--primary);
+}
+
+.bg-surface-lowest { background-color: var(--surface-container-lowest); }
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--surface-container-high);
+  color: var(--primary);
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  border-radius: var(--rounded-sm);
+}
+
+.add-skill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background: none;
+  border: 1px dashed var(--primary);
+  color: var(--primary);
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  border-radius: var(--rounded-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-skill-btn:hover {
+  background-color: rgba(196, 192, 255, 0.1);
+}
+
+/* Sidebar Panels */
+.flex-col { display: flex; flex-direction: column; }
+.gap-sm { gap: 0.75rem; }
+.gap-md { gap: 1rem; }
+
+.financial-panel {
+  background-color: var(--surface-container-low);
+  padding: 1.5rem;
+  border-radius: var(--rounded-md);
+  border: 1px solid rgba(70, 69, 85, 0.1);
+  margin-top: 1.5rem;
+}
+
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.text-10 { font-size: 0.625rem; }
+.opacity-50 { opacity: 0.5; }
+
+.textarea-field {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.select-wrapper {
+  color: var(--on-surface-variant);
+}
+
+.cancel-anytime {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(70, 69, 85, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.posting-tips {
+  padding: 1.5rem;
+}
+
+.tips-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tips-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tips-list li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.step-circle {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bg-tertiary-container-20 {
+  background-color: rgba(202, 129, 0, 0.2);
+}
+
+/* Glassmorphism Promotion Card */
+.glass-morphism {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(51, 52, 59, 0.4); /* surface-container-highest/40 */
+  backdrop-filter: blur(24px);
+  padding: 1.5rem;
+  border-radius: var(--rounded-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.position-z-10 { position: relative; z-index: 10; }
+.position-z-0 { position: relative; z-index: 0; }
+
+.boost-post-link {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  transition: all 0.2s;
+}
+
+.boost-post-link:hover { text-decoration: underline; }
+
+.promotion-glow {
+  position: absolute;
+  right: -1rem;
+  bottom: -1rem;
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(196, 192, 255, 0.1);
+  border-radius: 50%;
+  filter: blur(24px);
+}

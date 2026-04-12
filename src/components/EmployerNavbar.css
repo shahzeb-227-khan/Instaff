@@ -1,0 +1,119 @@
+/* ══════════════════════════════════════════
+   EMPLOYER NAVBAR — EmployerNavbar.css
+   ══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+.emp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(252, 249, 248, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(195, 198, 211, 0.35);
+  height: 64px;
+}
+
+.emp-nav__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.emp-nav__brand {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #003f8b;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.emp-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.emp-nav__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #434751;
+  text-decoration: none;
+  padding: 0.4rem 0.875rem;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+  position: relative;
+  white-space: nowrap;
+}
+
+.emp-nav__link:hover {
+  color: #003f8b;
+  background: rgba(0, 63, 139, 0.06);
+}
+
+.emp-nav__link--active {
+  color: #003f8b;
+  font-weight: 700;
+  background: rgba(0, 63, 139, 0.08);
+}
+
+.emp-nav__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: #003f8b;
+  border-radius: 2px;
+}
+
+.emp-nav__right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Logout button */
+.emp-nav__logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #434751;
+  background: none;
+  border: 1.5px solid rgba(195, 198, 211, 0.5);
+  padding: 0.4rem 1rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.emp-nav__logout:hover {
+  color: #ba1a1a;
+  border-color: rgba(186, 26, 26, 0.4);
+  background: rgba(186, 26, 26, 0.04);
+}
+
+@media (max-width: 1024px) {
+  .emp-nav__link { padding: 0.4rem 0.5rem; font-size: 0.8rem; }
+}
+
+@media (max-width: 768px) {
+  .emp-nav__links { display: none; }
+}
