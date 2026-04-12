@@ -19,6 +19,9 @@
   padding: 2.5rem 2rem 5rem;
 }
 
+/* Breadcrumb — HCI: Navigation clarity */
+.epj-breadcrumb { margin-bottom: 1.25rem; }
+
 /* ── Layout ── */
 .epj-layout {
   display: grid;
@@ -455,9 +458,10 @@
 
 .epj-success__btns {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.75rem;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .epj-btn-primary {

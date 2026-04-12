@@ -73,12 +73,22 @@ export default function JSJobDetail() {
       <JobSeekerNavbar />
 
       <main className="jd-main">
-        {/* Breadcrumb */}
-        <div className="jd-breadcrumb">
-          <button className="jd-back-btn" onClick={() => navigate('/job-seeker/find-jobs')}>
-            <ArrowLeft size={16} /> Back to Jobs
-          </button>
-        </div>
+        {/* ── Breadcrumb navigation — HCI: Navigation clarity & recognition ── */}
+        <nav className="jd-breadcrumb" aria-label="Breadcrumb">
+          <ol className="jd-breadcrumb__list">
+            <li className="jd-breadcrumb__item">
+              <button className="jd-breadcrumb__link" onClick={() => navigate('/job-seeker/home')}>Home</button>
+            </li>
+            <li className="jd-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="jd-breadcrumb__item">
+              <button className="jd-breadcrumb__link" onClick={() => navigate('/job-seeker/find-jobs')}>Find Jobs</button>
+            </li>
+            <li className="jd-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="jd-breadcrumb__item jd-breadcrumb__item--current" aria-current="page">
+              Job Details
+            </li>
+          </ol>
+        </nav>
 
         <div className="jd-layout">
           {/* ── LEFT: Job info ── */}

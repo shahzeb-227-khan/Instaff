@@ -174,12 +174,20 @@ export default function TalentDetail() {
       <EmployerNavbar />
 
       <main className="td-main">
-        {/* Breadcrumb */}
-        <div className="td-breadcrumb">
-          <button className="td-back-btn" onClick={() => navigate('/employer/find-talent')} aria-label="Back to talent list">
-            <ArrowLeft size={16} /> Back to Talent List
-          </button>
-        </div>
+        {/* ── Breadcrumb navigation — HCI: Navigation clarity & recognition ── */}
+        <nav className="td-breadcrumb" aria-label="Breadcrumb">
+          <ol className="td-breadcrumb__list">
+            <li className="td-breadcrumb__item">
+              <button className="td-breadcrumb__link" onClick={() => navigate('/employer/home')}>Home</button>
+            </li>
+            <li className="td-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="td-breadcrumb__item">
+              <button className="td-breadcrumb__link" onClick={() => navigate('/employer/find-talent')}>Find Talent</button>
+            </li>
+            <li className="td-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="td-breadcrumb__item td-breadcrumb__item--current" aria-current="page">Candidate Profile</li>
+          </ol>
+        </nav>
 
         <div className="td-layout">
           {/* ── LEFT: Profile ── */}

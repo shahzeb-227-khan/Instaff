@@ -214,37 +214,63 @@
   gap: 2rem;
   margin: 2rem 0 1.5rem 0;
   flex-wrap: wrap;
+  align-items: stretch; /* Ensures cards in same row have equal height */
 }
 .hero-role-card {
-  flex: 1 1 220px;
-  min-width: 220px;
+  flex: 1 1 240px;
+  min-width: 240px;
   max-width: 320px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
+  padding: 1.5rem;
+  border-radius: var(--rounded-md);
+  background: var(--surface);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+.hero-role-img-wrap {
+  width: 100%;
+  height: 120px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+.hero-role-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hero-role-title {
   font-size: 1.15rem;
   font-weight: 800;
   color: var(--on-surface);
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
   font-family: var(--font-display);
 }
 .hero-role-desc {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--on-surface-variant);
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
+  flex: 1; /* Pushes button to bottom */
 }
 .hero-role-btn {
+  width: 100% !important;
+  height: 3rem; /* Enforce exact same height */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  text-align: center;
+  white-space: nowrap;
+  box-sizing: border-box !important;
   margin-top: auto;
-}
-.hero-role-img {
-  width: 100%;
-  object-fit: cover;
-  border-radius: 0.75rem;
-  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {

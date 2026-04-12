@@ -114,3 +114,150 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+/* ══════════════════════════════════════════
+   HCI USABILITY ADDITIONS  (shared utilities)
+   ══════════════════════════════════════════ */
+
+/* ── Breadcrumb navigation ── */
+.jd-breadcrumb,
+.ja-breadcrumb,
+.td-breadcrumb,
+.hf-breadcrumb,
+.epj-breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.jd-breadcrumb__list,
+.ja-breadcrumb__list,
+.td-breadcrumb__list,
+.hf-breadcrumb__list,
+.epj-breadcrumb__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.jd-breadcrumb__link,
+.ja-breadcrumb__link,
+.td-breadcrumb__link,
+.hf-breadcrumb__link,
+.epj-breadcrumb__link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #2557a7;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: background 0.12s, color 0.12s;
+  text-decoration: none;
+}
+
+.jd-breadcrumb__link:hover,
+.ja-breadcrumb__link:hover,
+.td-breadcrumb__link:hover,
+.hf-breadcrumb__link:hover,
+.epj-breadcrumb__link:hover {
+  background: rgba(37, 87, 167, 0.08);
+  color: #003f8b;
+}
+
+.jd-breadcrumb__sep,
+.ja-breadcrumb__sep,
+.td-breadcrumb__sep,
+.hf-breadcrumb__sep,
+.epj-breadcrumb__sep {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  user-select: none;
+}
+
+.jd-breadcrumb__item--current,
+.ja-breadcrumb__item--current,
+.td-breadcrumb__item--current,
+.hf-breadcrumb__item--current,
+.epj-breadcrumb__item--current {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #434751;
+  padding: 2px 4px;
+}
+
+/* ── Edit Submission / success action row ── */
+.ja-success__actions,
+.hf-success-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.ja-success__edit-btn,
+.hf-success-edit-btn,
+.epj-success__edit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1.5px solid rgba(195, 198, 211, 0.6);
+  border-radius: 10px;
+  padding: 0.6rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #434751;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.ja-success__edit-btn:hover,
+.hf-success-edit-btn:hover,
+.epj-success__edit-btn:hover {
+  background: rgba(37, 87, 167, 0.07);
+  border-color: rgba(37, 87, 167, 0.35);
+  color: #2557a7;
+}
+
+/* ── FindTalent: status + spinner (mirrors FindJobs styles) ── */
+.ft-status {
+  font-size: 0.82rem;
+  color: #737783;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ft-status--searching {
+  color: #2557a7;
+  font-weight: 600;
+}
+
+.ft-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(37, 87, 167, 0.25);
+  border-top-color: #2557a7;
+  border-radius: 50%;
+  animation: ft-spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ft-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Empty state icon ── */
+.fj-empty__icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}

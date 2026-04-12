@@ -40,12 +40,11 @@ const JSHero = () => {
           {/* Single action card — Find Jobs */}
           <div className="hero-role-cards" style={{ justifyContent: 'flex-start' }}>
             <Card className="hero-role-card" style={{ maxWidth: 300 }}>
-              <div style={{ width:'100%', borderRadius:'0.75rem', marginBottom:'1rem', height:110, overflow:'hidden' }}>
+              <div className="hero-role-img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&q=80"
                   alt="Job searching on laptop"
                   className="hero-role-img"
-                  style={{ height:'100%', objectFit:'cover', width:'100%' }}
                 />
               </div>
               <h3 className="hero-role-title">Find Jobs</h3>

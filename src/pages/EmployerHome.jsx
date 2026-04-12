@@ -40,12 +40,11 @@ const EmpHero = () => {
           <div className="hero-role-cards">
             {/* Card 1: Find Talent */}
             <Card className="hero-role-card">
-              <div style={{ width:'100%', borderRadius:'0.75rem', marginBottom:'1rem', height:110, overflow:'hidden' }}>
+              <div className="hero-role-img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&q=80"
                   alt="Business meeting with candidates"
                   className="hero-role-img"
-                  style={{ height:'100%', objectFit:'cover', width:'100%' }}
                 />
               </div>
               <h3 className="hero-role-title">Find Talent</h3>
@@ -55,19 +54,18 @@ const EmpHero = () => {
               </Button>
             </Card>
 
-            {/* Card 2: Post a Job — fixed professional image */}
+            {/* Card 2: Post a Job */}
             <Card className="hero-role-card">
-              <div style={{ width:'100%', borderRadius:'0.75rem', marginBottom:'1rem', height:110, overflow:'hidden' }}>
+              <div className="hero-role-img-wrap">
                 <img
                   src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=500&q=80"
                   alt="Posting a job listing on a computer"
                   className="hero-role-img"
-                  style={{ height:'100%', objectFit:'cover', width:'100%' }}
                 />
               </div>
               <h3 className="hero-role-title">Post a Job</h3>
               <p className="hero-role-desc">Reach 12,000+ active professionals</p>
-              <Button variant="secondary" className="hero-role-btn" onClick={() => navigate('/employer/post-job')}>
+              <Button variant="primary" className="hero-role-btn" onClick={() => navigate('/employer/post-job')}>
                 Post Job Now
               </Button>
             </Card>

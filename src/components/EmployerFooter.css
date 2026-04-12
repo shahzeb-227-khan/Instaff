@@ -49,5 +49,8 @@
 }
 
 @media (max-width: 600px) {
-  .emp-footer__inner { flex-direction: column; align-items: flex-start; }
+  .emp-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

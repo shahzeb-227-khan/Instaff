@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import EmployerNavbar from '../components/EmployerNavbar';
 import EmployerFooter from '../components/EmployerFooter';
@@ -43,6 +43,17 @@ export default function FindTalent() {
   const [availOnly, setAvailOnly] = useState(false);
   const [expFilter, setExpFilter] = useState([]);
   const [maxRate,   setMaxRate]   = useState(RATE_MAX);
+  const [isSearching, setIsSearching] = useState(false);
+  const debounceRef = useRef(null);
+
+  /* HCI: Visibility of system status — debounced search feedback */
+  const triggerSearch = () => {
+    setIsSearching(true);
+    clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setIsSearching(false), 400);
+  };
+
+  const handleKeywordChange = (e) => { setKeyword(e.target.value); triggerSearch(); };
 
   const toggleExp = (val) =>
     setExpFilter((prev) =>
@@ -148,15 +159,23 @@ export default function FindTalent() {
               className="ft-search"
               placeholder="Search by name, role, or skill…"
               value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
+              onChange={handleKeywordChange}
             />
           </div>
 
           <div className="ft-main-header">
             <h1 className="ft-main-header__title">Browse Available Talent</h1>
-            <span className="ft-main-header__count">
-              {results.length} professional{results.length !== 1 ? 's' : ''} found
-            </span>
+            {/* HCI: Visibility of system status — live search feedback */}
+            {isSearching ? (
+              <span className="ft-status ft-status--searching" role="status" aria-live="polite">
+                <span className="ft-spinner" aria-hidden="true" />
+                Searching…
+              </span>
+            ) : (
+              <span className="ft-status" role="status" aria-live="polite">
+                {results.length} professional{results.length !== 1 ? 's' : ''} found
+              </span>
+            )}
           </div>
 
           {results.length > 0 ? (

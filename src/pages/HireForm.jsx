@@ -108,12 +108,22 @@ export default function HireForm() {
                 <span className="hf-success-val">{form.budget}</span>
               </div>
             </div>
-            <button
-              className="hf-back-btn"
-              onClick={() => navigate('/employer/find-talent')}
-            >
-              Back to Talent List
-            </button>
+            {/* HCI: Error Recovery — soft reversal option */}
+            <div className="hf-success-actions">
+              <button
+                className="hf-success-edit-btn"
+                onClick={() => setSuccess(false)}
+                aria-label="Edit your hiring request"
+              >
+                ✏️ Edit Submission
+              </button>
+              <button
+                className="hf-back-btn"
+                onClick={() => navigate('/employer/find-talent')}
+              >
+                Back to Talent List
+              </button>
+            </div>
           </div>
         </main>
         <EmployerFooter />
@@ -127,16 +137,24 @@ export default function HireForm() {
       <EmployerNavbar />
 
       <main className="hf-main">
-        {/* Breadcrumb */}
-        <div className="hf-breadcrumb">
-          <button
-            className="hf-nav-back"
-            onClick={() => navigate(`/employer/talent-detail/${id}`)}
-            aria-label="Back to candidate profile"
-          >
-            <ArrowLeft size={16} /> Back to Profile
-          </button>
-        </div>
+        {/* ── Breadcrumb navigation — HCI: Navigation clarity ── */}
+        <nav className="hf-breadcrumb" aria-label="Breadcrumb">
+          <ol className="hf-breadcrumb__list">
+            <li className="hf-breadcrumb__item">
+              <button className="hf-breadcrumb__link" onClick={() => navigate('/employer/home')}>Home</button>
+            </li>
+            <li className="hf-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="hf-breadcrumb__item">
+              <button className="hf-breadcrumb__link" onClick={() => navigate('/employer/find-talent')}>Find Talent</button>
+            </li>
+            <li className="hf-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="hf-breadcrumb__item">
+              <button className="hf-breadcrumb__link" onClick={() => navigate(`/employer/talent-detail/${id}`)}>Candidate Profile</button>
+            </li>
+            <li className="hf-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="hf-breadcrumb__item hf-breadcrumb__item--current" aria-current="page">Hire</li>
+          </ol>
+        </nav>
 
         <div className="hf-layout">
           {/* ── Candidate summary ── */}

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Clock, Search } from 'lucide-react';
 import JobSeekerNavbar from '../components/JobSeekerNavbar';
@@ -53,6 +53,18 @@ export default function FindJobs() {
   const [typeFilter, setTypeFilter] = useState([]);
   const [expFilter,  setExpFilter]  = useState([]);
   const [salaryIdx,  setSalaryIdx]  = useState(0);
+  const [isSearching, setIsSearching] = useState(false);
+  const debounceRef = useRef(null);
+
+  /* HCI: Visibility of system status — debounced search feedback */
+  const triggerSearch = () => {
+    setIsSearching(true);
+    clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => setIsSearching(false), 400);
+  };
+
+  const handleKeywordChange = (e) => { setKeyword(e.target.value); triggerSearch(); };
+  const handleLocationChange = (e) => { setLocation(e.target.value); triggerSearch(); };
 
   const toggleArr = (arr, setArr, val) =>
     setArr(arr.includes(val) ? arr.filter((x) => x !== val) : [...arr, val]);
@@ -91,7 +103,7 @@ export default function FindJobs() {
               className="fj-search-input"
               placeholder="Job title, company, or skill…"
               value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
+              onChange={handleKeywordChange}
               aria-label="Search jobs"
             />
           </div>
@@ -102,7 +114,7 @@ export default function FindJobs() {
               className="fj-search-input"
               placeholder="Location or Remote"
               value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              onChange={handleLocationChange}
               aria-label="Filter by location"
             />
           </div>
@@ -162,7 +174,17 @@ export default function FindJobs() {
         <main className="fj-main">
           <div className="fj-main-hd">
             <h1 className="fj-main-title">Browse Job Listings</h1>
-            <span className="fj-main-count">{results.length} job{results.length !== 1 ? 's' : ''} found</span>
+            {/* HCI: Visibility of system status — live search feedback */}
+            {isSearching ? (
+              <span className="fj-status fj-status--searching" role="status" aria-live="polite">
+                <span className="fj-spinner" aria-hidden="true" />
+                Searching…
+              </span>
+            ) : (
+              <span className="fj-status" role="status" aria-live="polite">
+                {results.length} job{results.length !== 1 ? 's' : ''} found
+              </span>
+            )}
           </div>
 
           {results.length > 0 ? (
@@ -208,9 +230,10 @@ export default function FindJobs() {
             </div>
           ) : (
             <div className="fj-empty">
-              <p className="fj-empty__title">No jobs matched your search</p>
-              <p className="fj-empty__sub">Try adjusting your filters or clearing the search.</p>
-              <button className="fj-empty__btn" onClick={clearAll}>Reset Filters</button>
+              <div className="fj-empty__icon" aria-hidden="true">🔍</div>
+              <p className="fj-empty__title">No jobs match your filters</p>
+              <p className="fj-empty__sub">Try adjusting your search terms or removing a filter.</p>
+              <button className="fj-empty__btn" onClick={clearAll}>Clear Filters</button>
             </div>
           )}
         </main>

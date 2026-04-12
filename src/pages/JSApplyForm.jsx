@@ -96,9 +96,19 @@ export default function JSApplyForm() {
                 </div>
               ))}
             </div>
-            <button className="ja-submit-btn" onClick={() => navigate('/job-seeker/find-jobs')}>
-              ← Back to Jobs
-            </button>
+            {/* HCI: Error Recovery — soft reversal option */}
+            <div className="ja-success__actions">
+              <button
+                className="ja-success__edit-btn"
+                onClick={() => setSuccess(false)}
+                aria-label="Edit your application submission"
+              >
+                ✏️ Edit Submission
+              </button>
+              <button className="ja-submit-btn" onClick={() => navigate('/job-seeker/find-jobs')}>
+                ← Back to Jobs
+              </button>
+            </div>
           </div>
         </main>
         <EmployerFooter />
@@ -111,12 +121,24 @@ export default function JSApplyForm() {
       <JobSeekerNavbar />
 
       <main className="ja-main">
-        {/* Breadcrumb */}
-        <div className="ja-breadcrumb">
-          <button className="ja-back-btn" onClick={() => navigate(`/job-seeker/job-detail/${id}`)}>
-            <ArrowLeft size={16} /> Back to Job
-          </button>
-        </div>
+        {/* ── Breadcrumb navigation — HCI: Navigation clarity ── */}
+        <nav className="ja-breadcrumb" aria-label="Breadcrumb">
+          <ol className="ja-breadcrumb__list">
+            <li className="ja-breadcrumb__item">
+              <button className="ja-breadcrumb__link" onClick={() => navigate('/job-seeker/home')}>Home</button>
+            </li>
+            <li className="ja-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="ja-breadcrumb__item">
+              <button className="ja-breadcrumb__link" onClick={() => navigate('/job-seeker/find-jobs')}>Find Jobs</button>
+            </li>
+            <li className="ja-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="ja-breadcrumb__item">
+              <button className="ja-breadcrumb__link" onClick={() => navigate(`/job-seeker/job-detail/${id}`)}>Job Details</button>
+            </li>
+            <li className="ja-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="ja-breadcrumb__item ja-breadcrumb__item--current" aria-current="page">Apply</li>
+          </ol>
+        </nav>
 
         <div className="ja-layout">
           {/* ── Left: Job summary ── */}

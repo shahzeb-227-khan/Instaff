@@ -83,10 +83,35 @@
 .js-nav__right {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   flex-shrink: 0;
 }
 
-/* Logout button — identical style to employer */
+/* Switch Role button — subtle secondary action */
+.js-nav__switch-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #2557a7;
+  background: rgba(37, 87, 167, 0.07);
+  border: 1.5px solid rgba(37, 87, 167, 0.2);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.js-nav__switch-role:hover {
+  background: rgba(37, 87, 167, 0.13);
+  border-color: rgba(37, 87, 167, 0.4);
+  color: #003f8b;
+}
+
+/* Logout button */
 .js-nav__logout {
   display: inline-flex;
   align-items: center;
@@ -110,6 +135,110 @@
   background: rgba(186, 26, 26, 0.04);
 }
 
+/* Hamburger button — mobile only */
+.js-nav__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1.5px solid rgba(195, 198, 211, 0.5);
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  color: #434751;
+  transition: background 0.15s, color 0.15s;
+}
+
+.js-nav__hamburger:hover {
+  background: rgba(0, 63, 139, 0.06);
+  color: #003f8b;
+}
+
+/* Mobile dropdown menu */
+.js-nav__mobile-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(252, 249, 248, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(195, 198, 211, 0.35);
+  padding: 0.75rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 199;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.js-nav__mobile-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #434751;
+  text-decoration: none;
+  padding: 0.65rem 0.875rem;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.js-nav__mobile-link:hover,
+.js-nav__mobile-link--active {
+  background: rgba(0, 63, 139, 0.07);
+  color: #003f8b;
+  font-weight: 600;
+}
+
+.js-nav__mobile-divider {
+  height: 1px;
+  background: rgba(195, 198, 211, 0.4);
+  margin: 0.5rem 0;
+}
+
+.js-nav__mobile-switch,
+.js-nav__mobile-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.65rem 0.875rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+}
+
+.js-nav__mobile-switch {
+  color: #2557a7;
+}
+.js-nav__mobile-switch:hover {
+  background: rgba(37, 87, 167, 0.08);
+}
+
+.js-nav__mobile-logout {
+  color: #ba1a1a;
+}
+.js-nav__mobile-logout:hover {
+  background: rgba(186, 26, 26, 0.06);
+}
+
+/* ── Responsive: tablets ── */
+@media (max-width: 1024px) {
+  .js-nav__switch-label { display: none; }
+  .js-nav__switch-role { padding: 0.35rem 0.5rem; }
+}
+
+/* ── Responsive: mobile ── */
 @media (max-width: 768px) {
+  .js-nav { height: 64px; position: sticky; } /* keep nav sticky so menu anchors correctly */
   .js-nav__links { display: none; }
+  .js-nav__switch-role { display: none; }
+  .js-nav__logout { display: none; }
+  .js-nav__hamburger { display: inline-flex; }
 }

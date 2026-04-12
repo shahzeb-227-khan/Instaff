@@ -94,7 +94,15 @@ export default function EmployerPostJob() {
                 </div>
               ))}
             </div>
+            {/* HCI: Error Recovery — soft reversal option */}
             <div className="epj-success__btns">
+              <button
+                className="epj-success__edit-btn"
+                onClick={() => setSuccess(false)}
+                aria-label="Edit job posting"
+              >
+                ✏️ Edit Submission
+              </button>
               <button className="epj-btn-primary" onClick={() => navigate('/employer/find-talent')}>
                 Browse Talent
               </button>
@@ -114,6 +122,16 @@ export default function EmployerPostJob() {
       <EmployerNavbar />
 
       <main className="epj-main">
+        {/* ── Breadcrumb navigation — HCI: Navigation clarity ── */}
+        <nav className="epj-breadcrumb" aria-label="Breadcrumb">
+          <ol className="epj-breadcrumb__list">
+            <li className="epj-breadcrumb__item">
+              <button className="epj-breadcrumb__link" onClick={() => navigate('/employer/home')}>Home</button>
+            </li>
+            <li className="epj-breadcrumb__sep" aria-hidden="true">›</li>
+            <li className="epj-breadcrumb__item epj-breadcrumb__item--current" aria-current="page">Post Job</li>
+          </ol>
+        </nav>
         <div className="epj-layout">
           {/* ── LEFT: Form ── */}
           <div className="epj-form-col">

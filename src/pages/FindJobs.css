@@ -190,9 +190,34 @@
   letter-spacing: -0.025em;
 }
 
-.fj-main-count {
+/* HCI: Search status feedback */
+.fj-status {
   font-size: 0.82rem;
   color: #737783;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fj-status--searching {
+  color: #2557a7;
+  font-weight: 600;
+}
+
+/* Spinner animation */
+.fj-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(37, 87, 167, 0.25);
+  border-top-color: #2557a7;
+  border-radius: 50%;
+  animation: fj-spin 0.6s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes fj-spin {
+  to { transform: rotate(360deg); }
 }
 
 /* ── List ── */
