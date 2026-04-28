@@ -20,6 +20,7 @@ const JobSeekerNavbar = () => {
   const links = [
     { to: '/job-seeker/home',      label: 'Home'      },
     { to: '/job-seeker/find-jobs', label: 'Find Jobs' },
+    { to: '/job-seeker/dashboard', label: 'Dashboard' },
     { to: '/job-seeker/messages',  label: 'Messages'  },
   ];
 

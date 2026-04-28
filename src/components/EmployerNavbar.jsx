@@ -19,6 +19,7 @@ const EmployerNavbar = () => {
 
   const links = [
     { to: '/employer/home',         label: 'Home'        },
+    { to: '/employer/dashboard',    label: 'Dashboard'   },
     { to: '/employer/find-talent',  label: 'Find Talent' },
     { to: '/employer/post-job',     label: 'Post Job'    },
     { to: '/employer/messages',     label: 'Messages'    },

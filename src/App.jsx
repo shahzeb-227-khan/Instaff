@@ -29,6 +29,7 @@ import FindJobs      from './pages/FindJobs';
 import JSJobDetail   from './pages/JSJobDetail';
 import JSApplyForm   from './pages/JSApplyForm';
 import JSMessages    from './pages/JSMessages';
+import JSdashboard   from './pages/JSdashboard';
 
 /* ══════════════════════════════════════════
    EMPLOYER PORTAL
@@ -47,6 +48,7 @@ import HireForm         from './pages/HireForm';
 import EmployerPostJob  from './pages/EmployerPostJob';
 import EmployerMessages from './pages/EmployerMessages';
 import EmployerPayment  from './pages/EmployerPayment';
+import EMPdashboard    from './pages/EMPdashboard';
 
 import './App.css';
 
@@ -71,6 +73,7 @@ function App() {
         <Route path="/job-seeker/job-detail/:id" element={<JSJobDetail />} />
         <Route path="/job-seeker/apply/:id"      element={<JSApplyForm />} />
         <Route path="/job-seeker/messages"       element={<JSMessages />} />
+        <Route path="/job-seeker/dashboard"      element={<JSdashboard />} />
 
         {/* Share Work route removed — feature discontinued */}
 
@@ -84,6 +87,7 @@ function App() {
         <Route path="/employer/post-job"          element={<EmployerPostJob />} />
         <Route path="/employer/messages"          element={<EmployerMessages />} />
         <Route path="/employer/payment"           element={<EmployerPayment />} />
+        <Route path="/employer/dashboard"         element={<EMPdashboard />} />
 
         {/* ── Shared utilities ── */}
         <Route path="/success"       element={<Success />} />
